@@ -6,6 +6,7 @@ const {randomBytes} = require('crypto')
 app.use(express.json());
 app.use(cors())
 let posts = {}
+
 app.get('/posts', (_, res) => {
   res.send(posts)
 })
