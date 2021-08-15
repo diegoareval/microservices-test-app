@@ -1,7 +1,7 @@
 import * as React from "react"
 import Header from "./layout/header"
 // 1. import `ChakraProvider` component
-import { ChakraProvider, extendTheme, Container, Heading } from "@chakra-ui/react"
+import { ChakraProvider, extendTheme, Container, Heading, Flex } from "@chakra-ui/react"
 import PostCreate from "./components/PostCreate"
 import PostList from "./components/PostList"
 // 2. Extend the theme to include custom colors, fonts, etc
@@ -18,12 +18,14 @@ export default function App( ) {
   // 2. Use at the root of your app
   return (
     <ChakraProvider theme={theme}>
-        <Header/>
+      <Header/>
       <Container>
-        <Heading>Blog App</Heading>
-      <PostCreate />
+      <Heading>Blog App</Heading>
+        <PostCreate />
+        </Container>
+        <Flex justify="space-around">
       <PostList/>
-      </Container>
+     </Flex>
     </ChakraProvider>
   )
 }

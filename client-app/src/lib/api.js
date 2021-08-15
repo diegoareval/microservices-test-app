@@ -29,7 +29,8 @@ export default class Api {
     }
 
     static getCommentsByPost (id){
-        return axios.get(`http://localhost:4000/posts/${id}/comments`).then((res)=> {
+        return axios.get(`http://localhost:4001/posts/${id}/comments`).then((res)=> {
+            console.log(res.data);
             return {
                 status: true,
                 data: res.data
@@ -42,9 +43,10 @@ export default class Api {
         }
 
         static createPostComment (content, id){
-            return axios.post(`http://localhost:4000/posts/${id}/comments`, {
+            return axios.post(`http://localhost:4001/posts/${id}/comments`, {
                 content
             }).then((res)=> {
+                console.log(res.data);
                 return {
                     status: true,
                     data: res.data
